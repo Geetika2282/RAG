@@ -1,0 +1,9 @@
+langchain
+langchain-community
+sentence-transformers
+faiss-cpu
+ollama
+langchain-text-splitters
+langchain-ollama
+numpy
+
