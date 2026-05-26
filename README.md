@@ -1,14 +1,12 @@
 # AI Retrieval Systems Repository
 
-This repository contains implementations of different Retrieval-Augmented Generation (RAG) architectures, starting from basic RAG pipelines to advanced Agentic RAG systems.
-
-The goal of this repo is to understand how modern AI systems retrieve information, reason over it, and generate accurate responses using Large Language Models (LLMs).
+This repository contains implementations of different Retrieval-Augmented Generation (RAG) architectures using locally hosted Llama models through Ollama.
 
 ---
 
 # Repository Structure
 
-```txt
+```txt id="1vk7c2"
 ├── Vanilla RAG/
 ├── RAG Agent/
 ├── Agentic RAG/
@@ -17,137 +15,62 @@ The goal of this repo is to understand how modern AI systems retrieve informatio
 
 ---
 
-# 1. Vanilla RAG
+## 1. Vanilla RAG
 
 Basic Retrieval-Augmented Generation pipeline.
 
-### What it is
-
-RAG combines:
-
-* Retrieval system
-* Vector database
-* Large Language Model
-
-The system first retrieves relevant chunks from documents and then sends them to the LLM to generate an answer.
-
-### Workflow
-
-```txt
-User Query
-   ↓
-Retrieve Relevant Chunks
-   ↓
-Pass Context to LLM
-   ↓
-Generate Answer
-```
-
-### Features
+### Includes
 
 * Text chunking
-* Embeddings generation
-* FAISS vector store
-* Similarity search
-* Context-based answering
-
-### Purpose
-
-Used to reduce hallucination by grounding LLM responses in external data.
-
----
-
-# 2. RAG Agent
-
-RAG pipeline enhanced with agent-like behavior.
-
-### What it is
-
-Instead of following a fixed pipeline, the system can make simple decisions during execution.
-
-The agent can:
-
-* retrieve context
-* summarize long context
-* decide next action
-* generate refined responses
+* Embeddings
+* FAISS vector database
+* Context retrieval
+* LLM-based answering
 
 ### Workflow
 
-```txt
-User Query
-   ↓
-Retrieve Context
-   ↓
-Agent Decision Making
-   ↓
-Optional Summarization
-   ↓
-Generate Final Answer
+```txt id="s7glwl"
+Query → Retrieve Context → Generate Answer
 ```
-
-### Features
-
-* Modular tool-based architecture
-* Retrieval tool
-* Summarization tool
-* Answer generation tool
-* Dynamic workflow execution
-
-### Purpose
-
-Introduces reasoning and adaptability into traditional RAG systems.
 
 ---
 
-# 3. Agentic RAG
+## 2. RAG Agent
 
-Advanced autonomous retrieval and reasoning system.
+Enhanced RAG system with decision-making capabilities.
 
-### What it is
+### Includes
 
-Agentic RAG uses AI agents that can plan, reason, and use multiple tools dynamically to solve complex tasks.
-
-Unlike traditional RAG, the workflow is not fixed.
-
-The agent can:
-
-* decide what to retrieve
-* rewrite queries
-* call multiple tools
-* validate answers
-* retry retrieval
-* reason step-by-step
+* Retrieval tools
+* Context summarization
+* Dynamic response generation
+* Tool-based workflow
 
 ### Workflow
 
-```txt
-User Query
-   ↓
-Planning & Reasoning
-   ↓
-Tool Selection
-   ↓
-Retrieval / Web Search / Memory
-   ↓
-Answer Validation
-   ↓
-Final Response
+```txt id="9d97yw"
+Query → Retrieve → Agent Decision → Answer
 ```
 
-### Features
+---
 
-* Multi-step reasoning
-* Autonomous decision making
+## 3. Agentic RAG
+
+Advanced AI agent system with autonomous reasoning and multi-step execution.
+
+### Includes
+
 * Query rewriting
 * Multi-tool usage
 * Context validation
-* Memory integration
-* Adaptive retrieval strategies
+* Adaptive retrieval
+* Step-by-step reasoning
 
-### Purpose
+### Workflow
 
-Designed for more intelligent AI systems capable of handling complex and dynamic tasks.
+```txt id="5igzkr"
+Query → Reasoning → Tool Usage → Validation → Final Answer
+```
 
 ---
 
@@ -156,28 +79,5 @@ Designed for more intelligent AI systems capable of handling complex and dynamic
 * Python
 * LangChain
 * FAISS
+* Local Llama Models
 * Ollama
-* LLMs
-* Vector Embeddings
-
----
-
-# Learning Goal
-
-This repository demonstrates the evolution from:
-
-```txt
-Traditional RAG
-      ↓
-Agent-based RAG
-      ↓
-Fully Agentic AI Systems
-```
-
-It is intended for learning:
-
-* Retrieval systems
-* Vector databases
-* LLM orchestration
-* AI agents
-* Production AI workflows
