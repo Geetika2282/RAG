@@ -1,0 +1,3 @@
+These are created after Embedding + FAISS indexing:
+> index.faiss
+> index .pkl
