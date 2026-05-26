@@ -9,15 +9,15 @@ The goal of this repo is to understand how modern AI systems retrieve informatio
 # Repository Structure
 
 ```txt
-├── RAG/
-├── RAG_Agent/
-├── Agentic_RAG/
+├── Vanilla RAG/
+├── RAG Agent/
+├── Agentic RAG/
 └── README.md
 ```
 
 ---
 
-# 1. RAG
+# 1. Vanilla RAG
 
 Basic Retrieval-Augmented Generation pipeline.
 
