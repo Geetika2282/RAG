@@ -1,10 +1,7 @@
-from langchain_ollama import ChatOllama
-
-llm = ChatOllama(
-    model="qwen2:7b",
-    base_url="http://localhost:11434")
+from llm import ask_gpt_oss
 
 def generate_answer(query, context):
+    print("[Tool] Calling GPT-OSS...")
 
     prompt = f"""
 You are a helpful AI assistant.
@@ -20,6 +17,17 @@ Context:
 Answer:
 """
 
-    response = llm.invoke(prompt)
+    response = ask_gpt_oss(
+        messages=[
+            {
+                "role": "system",
+                "content": "You are a helpful AI assistant."
+            },
+            {
+                "role": "user",
+                "content": prompt
+            }
+        ]
+    )
 
-    return response.content
+    return response
