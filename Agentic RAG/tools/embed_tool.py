@@ -1,7 +1,5 @@
 from langchain_community.vectorstores import FAISS
 from langchain_ollama import OllamaEmbeddings # For Embedding model
-from langchain_community.embeddings import SentenceTransformerEmbeddings
-import ollama 
 
 embedding_model = OllamaEmbeddings(
     model="nomic-embed-text-v2-moe:latest",
