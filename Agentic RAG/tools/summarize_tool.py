@@ -1,18 +1,21 @@
-from langchain_ollama import ChatOllama
-
-llm = ChatOllama(
-    model="qwen2:7b"
-)
+from llm import ask_gpt_oss
 
 def summarize_text(text):
+    print("[Tool] Summarizing...")
 
     prompt = f"""
-Summarize the following context clearly.
+Summarize the following context while preserving key information.
 
-Context:
 {text}
 """
 
-    response = llm.invoke(prompt)
+    response = ask_gpt_oss(
+        messages=[
+            {
+                "role": "user",
+                "content": prompt
+            }
+        ]
+    )
 
-    return response.content
+    return response
